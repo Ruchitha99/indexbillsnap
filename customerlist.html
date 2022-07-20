@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.button {
+  background-color: smokewhite;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button4 {border-radius: 16px;}
+
+
+* {box-sizing: border-box;}
+
+
+
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: left;
+  
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  
+}
+
+.topnav .search-container button {
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: whitesmoke;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: white;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+.pagination {
+  display: inline-block;
+  
+}
+.pagination {
+            text-align: center;
+         }
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: greenyellow;
+  color:black;
+  border: 1px solid green;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+         .demo {
+            display: inline-block;
+         }
+         .demo1 {
+            text-align: center;
+         }
+         .demo a {
+            color: black;
+            padding: 5px 12px;
+            text-decoration: none;
+            transition: background-color 2s;
+            border: 1px solid black;
+            font-size: 18px;
+       }
+       .demo a.active {
+          background-color: black;
+          color: white;
+          border-radius: 5px;
+       }
+       .demo a:hover:not(.active) {
+          background-color: black;
+       }
+       .demo a:first-child {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+       }
+       .demo a:last-child {
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+       }
+
+.open-button {
+  background-color: rgb(50, 181, 224);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  top: 60px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+.button2 {
+  border-radius:16px ;
+  background-color: #d030ec;
+  width: 60px;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #747780;
+ border-radius:16px ;
+  float: right;
+  width: 80px;
+  height: 40px;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.first {
+  width:30%;
+  background-color:white;
+  border:1px dotted black;
+  float: right;
+  margin-right: 20px;
+  margin-top: -150px;
+}
+
+.button3 {
+  float: right;
+  border-radius: 16px;
+ margin-right: 900px;
+}
+
+</style>
+</head>
+<body>
+  <div>
+     
+   <h1 style="color: rgb(8, 8, 236);">My Customers </h1>
+   <button id="show" class="button button1">Filter</button>  
+   <input type="text" id="myInput" onkeyup="myFunction()" style="width: 40%;"
+   placeholder="Search for names.." title="Type in a name">
+  
+   <dialog id="myFirstDialog"  class="first"> 
+
+    <div class="topnav" >
+   
+        <div class="search-container">
+         
+          <form action="customerlist.html">
+            <button id="hide" class="button button3" >x</button>  
+            <input type="text" placeholder="Search...." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button><br>
+            <h2>Status</h2>
+            <button class="button button4">Active</button>
+            <button class="button button4">Entered</button>
+            <button class="button button4">Completed</button>
+            <br>
+            <button class="button button4">Hosted</button>
+            <h2>Task</h2>
+            <button class="button button4">Active</button>
+            <button class="button button4">Entered</button>
+            <button class="button button4">Completed</button>
+            
+          </form>
+        </div>
+      
+    </div>
+     <br> 
+
+   </dialog>  
+
+
+   <table id="myTable">
+     <tr class="header">
+       <th>NAME</th>
+       <th>COUNTRY</th>
+       <th>ADRESS</th>
+       <th>STATE</th>
+       <th>VIEW</th>
+
+     </tr>
+     <tr>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>Berglunds snabbkop</td>
+       <td>Sweden</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+       
+     </tr>
+     <tr>
+       <td>Island Trading</td>
+       <td>UK</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>Koniglich Essen</td>
+       <td>Germany</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>Laughing Bacchus Winecellars</td>
+       <td>Canada</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>Magazzini Alimentari Riuniti</td>
+       <td>Italy</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>North/South</td>
+       <td>UK</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+     <tr>
+       <td>Paris specialites</td>
+       <td>France</td>
+       <td>Alfreds Futterkiste</td>
+       <td>Germany</td>
+       <td><button class="button button2">View</button></td>
+     </tr>
+   </table>
+  </div>
+
+
+<br>
+   <div class = "demo1">
+      <div class = "demo">
+        <a href="#">&laquo;</a>
+         <a href="#" class="active">1</a>
+         <a href="#" >2</a>
+         <a href="#">3</a>
+         <a href="#">4</a>
+         <a href="#">5</a>
+         <a href="#">6</a>
+         <a href="#">&raquo;</a>
+         
+      </div>
+   </div>
+
+
+   <script type="text/JavaScript">  
+    (function() {    
+        var dialog = document.getElementById('myFirstDialog');    
+        document.getElementById('show').onclick = function() {    
+            dialog.show();    
+        };    
+        document.getElementById('hide').onclick = function() {    
+            dialog.close();    
+        };    
+    })();   
+    </script> 
+
+   <script>
+    function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+    function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+   </script>
+</body>
+</html>

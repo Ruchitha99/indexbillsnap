@@ -1,0 +1,187 @@
+<!DOCTYPE>
+<html>  
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.button {
+  background-color: smokewhite;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button4 {border-radius: 16px;}
+
+
+* {box-sizing: border-box;}
+
+
+
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: left;
+  
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  
+}
+
+.topnav .search-container button {
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+.button1 {
+  border-radius: 16px;}
+
+.first{
+  width:50%;
+  background-color:
+  white;
+  border:1px dotted black;
+  height: 70%;
+}
+
+  .hi{
+margin-left: 10px;
+background-color:whitesmoke;
+width: 70%;
+}
+
+.hello{
+  width: 200px;
+  height: 200px;
+}
+.query{
+  margin-top: 100px;
+  width: 200px;
+}
+
+.hel{
+  margin-top: -180px;
+  width: 600px;
+  height: 200px;
+ 
+}
+.button2 {
+  float:right;
+ 
+}
+
+.xx{
+  float:right;
+  margin-right: -500px;
+}
+
+  </style>
+</head>
+<body>  
+<div>  
+<dialog id="myFirstDialog"  class="first"> 
+
+    <div class="topnav">
+  
+        <div class="search-container">
+          <div class="container">
+          <form action="pop.html">
+            <button id="hide" class="xx" >x</button>
+            <dialog  class="hi" open>Notification Title</dialog><br>
+           <br><br><br><br>
+            <label> </label>
+            <input  class="hello" type="file" id="myFile" /> <br><br>
+            <label for="subject" class="query"></label>
+          
+            <textarea id="subject" class="hel" name="subject" placeholder="Write something.."></textarea><br>
+            <button class="button button2">Save</button>
+            <button class="button button2">Cancel</button>
+          </form>
+          </div>
+        </div>
+    </div>
+     <br> 
+
+</dialog>  
+
+
+<button id="show" class="button button1">View</button>  
+</div>  
+  
+<!-- JavaScript to provide the "Show/Close" functionality -->  
+<script type="text/JavaScript">  
+(function() {    
+    var dialog = document.getElementById('myFirstDialog');    
+    document.getElementById('show').onclick = function() {    
+        dialog.show();    
+    };    
+    document.getElementById('hide').onclick = function() {    
+        dialog.close();    
+    };    
+})();   
+</script>  
+</body>
+</html>  
